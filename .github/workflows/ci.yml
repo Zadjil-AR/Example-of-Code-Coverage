@@ -36,7 +36,7 @@ jobs:
         run: npm ci
 
       - name: Run tests with coverage
-        run: npm run test:coverage
+        run: npm run test:coverage >> "${GITHUB_STEP_SUMMARY}" 
 
       # Use the latest code from Zadjil-AR/code-coverage-report-action PR #5
       # (branch: copilot/feat-report-line-coverage-loss)
