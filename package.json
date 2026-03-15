@@ -1,0 +1,13 @@
+{
+  "name": "shopping-cart",
+  "version": "1.0.0",
+  "description": "A simple shopping cart example application",
+  "private": true,
+  "scripts": {
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
