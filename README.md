@@ -65,3 +65,14 @@ every pull request targeting `main`. It uses the latest code from
 [Zadjil-AR/code-coverage-report-action PR #5](https://github.com/Zadjil-AR/code-coverage-report-action/pull/5)
 (branch `copilot/feat-report-line-coverage-loss`), which includes the
 `track_lost_lines` feature.
+
+## Merge Base Fix Documentation
+
+During testing, we discovered an issue where the code-coverage-report-action failed to find merge bases in CI environments. This repository contains comprehensive documentation and reference implementations for fixing this issue:
+
+- **[SUMMARY.md](SUMMARY.md)** - Quick reference and overview
+- **[MERGE_BASE_FIX.md](MERGE_BASE_FIX.md)** - Detailed documentation of the problem and solution
+- **[git-ref-resolver.js](git-ref-resolver.js)** - Production-ready reference implementation
+- **[git-ref-resolver.test.js](git-ref-resolver.test.js)** - Comprehensive test suite
+
+These documents explain how to modify the code-coverage-report-action to automatically handle remote refs in CI environments, eliminating the need for special workflow configuration.
