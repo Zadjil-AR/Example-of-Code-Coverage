@@ -3,6 +3,8 @@
 [![CI](https://github.com/Zadjil-AR/Example-of-Code-Coverage/actions/workflows/ci.yml/badge.svg)](https://github.com/Zadjil-AR/Example-of-Code-Coverage/actions/workflows/ci.yml)
 [![Coverage](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Zadjil-AR/Example-of-Code-Coverage/main/.github/badges/coverage.json)](https://github.com/Zadjil-AR/Example-of-Code-Coverage/actions/workflows/ci.yml)
 
+Temporary line added to exercise coverage history checks.
+
 A simple shopping cart application used as an example for the
 [code-coverage-report-action](https://github.com/Zadjil-AR/code-coverage-report-action).
 
