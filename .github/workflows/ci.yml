@@ -38,10 +38,9 @@ jobs:
       - name: Run tests with coverage
         run: npm run test:coverage >> "${GITHUB_STEP_SUMMARY}" 
 
-      # Use the latest code from Zadjil-AR/code-coverage-report-action PR #5
-      # (branch: copilot/feat-report-line-coverage-loss)
+      # Use the branch claude/remove-coverage-lines-json from the coverage action
       - name: Code Coverage Report
-        uses: Zadjil-AR/code-coverage-report-action@copilot/feat-report-line-coverage-loss
+        uses: Zadjil-AR/code-coverage-report-action@claude/remove-coverage-lines-json
         id: code_coverage
         if: ${{ github.actor != 'dependabot[bot]' }}
         with:
