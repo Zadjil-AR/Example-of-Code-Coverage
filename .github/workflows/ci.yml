@@ -38,10 +38,15 @@ jobs:
       - name: Run tests with coverage
         run: npm run test:coverage >> "${GITHUB_STEP_SUMMARY}" 
 
-      # Use the latest code from Zadjil-AR/code-coverage-report-action PR #5
-      # (branch: copilot/feat-report-line-coverage-loss)
+      # Log the commit hash of code-coverage-report-action being used
+      - name: Log code-coverage-report-action commit hash
+        run: |
+          COMMIT_HASH=$(git ls-remote https://github.com/Zadjil-AR/code-coverage-report-action.git refs/heads/copilot/feat-report-line-coverage-loss | cut -f1)
+          echo "Using code-coverage-report-action from branch copilot/feat-report-line-coverage-loss at commit: $COMMIT_HASH"
+
+      # Use latest from Zadjil-AR/code-coverage-report-action branch copilot/feat-report-line-coverage-loss
       - name: Code Coverage Report
-        uses: Zadjil-AR/code-coverage-report-action@copilot/feat-report-line-coverage-loss
+        uses: Zadjil-AR/code-coverage-report-action@copilot/feat-report-line-coverage-loss 
         id: code_coverage
         if: ${{ github.actor != 'dependabot[bot]' }}
         with:
