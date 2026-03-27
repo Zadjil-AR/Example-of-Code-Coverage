@@ -65,3 +65,26 @@ every pull request targeting `main`. It uses the latest code from
 [Zadjil-AR/code-coverage-report-action PR #5](https://github.com/Zadjil-AR/code-coverage-report-action/pull/5)
 (branch `copilot/feat-report-line-coverage-loss`), which includes the
 `track_lost_lines` feature.
+
+---
+
+## Full Code Coverage for Main Branch
+
+The current code coverage on the `main` branch is **87.58%**.
+
+### Coverage Artifacts
+
+The CI workflow generates and uploads coverage artifacts for every workflow run. These artifacts contain detailed coverage reports that are used when comparing coverage between the base branch and pull requests.
+
+**View coverage artifacts:**
+- [Latest main branch workflow run artifacts](https://github.com/Zadjil-AR/Example-of-Code-Coverage/actions/workflows/ci.yml?query=branch%3Amain)
+- Click on any completed workflow run, then scroll to the "Artifacts" section to download the `coverage-main` artifact
+
+**How artifacts are used in PR comparisons:**
+1. When a pull request is opened or updated, the CI workflow runs tests and generates coverage for the PR branch
+2. The `code-coverage-report-action` (configured with `artifact_download_workflow_names: 'CI'`) automatically downloads the most recent coverage artifact from the `main` branch
+3. The action compares the PR coverage against the base coverage from the artifact to determine:
+   - Overall coverage percentage change (increase/decrease)
+   - Specific lines that lost coverage (`track_lost_lines: 'true'`)
+   - Files with coverage changes
+4. A detailed comparison report is posted as a comment on the pull request, showing exactly what coverage was gained or lost
